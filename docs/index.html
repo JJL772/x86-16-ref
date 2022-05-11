@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			* {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+	text-align: center;
+}
+
+body {
+	background-color: #252525;
+	color: white;
+}
+
+#SearchBar {
+	width: 50%;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	height: 30px;
+	background-color: #505050;
+	color: white;
+	border: 0px;
+	padding-left: 10px;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#Table {
+	width: 50%;
+	border-collapse: collapse;
+	border: 1px solid #353535;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#Table tr:hover {
+	background-color: #505050;
+}
+
+#Table tr {
+	border-bottom: 1px solid #353535;
+}
+
+#Table th {
+	padding: 5px;
+	background-color: #505050;
+}
+
+.center {
+	text-align: center;
+	vertical-align: middle;
+}
+
+		</style>
+		<script>
+			
+function doSearch() {
+	const input = document.getElementById("SearchBar");
+	const table = document.getElementById("Table");
+	const entry = table.getElementsByTagName("tr");
+	const filterText = input.value.toUpperCase();
+	
+	for(i = 0; i < entry.length; i++) {
+		const text = entry[i].getElementsByTagName("td")[0]?.innerText;
+		if (!text) continue;
+		if (text.toUpperCase().indexOf(filterText) > -1) // Check if the text has the stuffs
+			entry[i].style.display = "";
+		else
+			entry[i].style.display = "none";
+	}
+}
+		</script>
+	</head>
+	<body>
+		<h1>x86-16 Instruction Set Reference</h1>
+		<input type="text" id="SearchBar" onkeyup="doSearch()" placeholder="Filter by instruction mnemonic">
+		<table id="Table" border="0"><tr class="header"><th>Instruction<br>[INST DST SRC]</th><th>Modified Flags<br>[oditszapc]</th><th>Undefined Flags<br>[oditszapc]</th><th>Description</th></tr><tr><td>AAA  </td><td class="center">......a.c</td><td class="center">o...sz.p.</td><td>ASCII adjust AL after addition</td></tr>
+<tr><td>AAA  </td><td class="center">....sz.p.</td><td class="center">o.....a.c</td><td>ASCII adjust for division</td></tr>
+<tr><td>AAM  </td><td class="center">....sz.p.</td><td class="center">o.....a.c</td><td>ASCII adjust for multiply</td></tr>
+<tr><td>AAS  </td><td class="center">......a.c</td><td class="center">o...sz.p.</td><td>ASCII adjust for multiply</td></tr>
+<tr><td>ADC reg8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add with carry</td></tr>
+<tr><td>ADC reg8/16 mem8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add with carry</td></tr>
+<tr><td>ADC mem8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add with carry</td></tr>
+<tr><td>ADC reg8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add with carry</td></tr>
+<tr><td>ADC mem8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add with carry</td></tr>
+<tr><td>ADC acc imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add with carry</td></tr>
+<tr><td>ADD reg8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add</td></tr>
+<tr><td>ADD reg8/16 mem8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add</td></tr>
+<tr><td>ADD mem8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add</td></tr>
+<tr><td>ADD reg8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add</td></tr>
+<tr><td>ADD mem8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add</td></tr>
+<tr><td>ADD acc imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Add</td></tr>
+<tr><td>AND reg8/16 reg8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical AND</td></tr>
+<tr><td>AND reg8/16 mem8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical AND</td></tr>
+<tr><td>AND mem8/16 reg8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical AND</td></tr>
+<tr><td>AND reg8/16 imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical AND</td></tr>
+<tr><td>AND mem8/16 imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical AND</td></tr>
+<tr><td>AND acc imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical AND</td></tr>
+<tr><td>CALL near-proc </td><td class="center">.........</td><td class="center">.........</td><td>Call a procedure</td></tr>
+<tr><td>CALL far-proc </td><td class="center">.........</td><td class="center">.........</td><td>Call a procedure</td></tr>
+<tr><td>CALL memptreg16 </td><td class="center">.........</td><td class="center">.........</td><td>Call a procedure</td></tr>
+<tr><td>CALL regptreg16 </td><td class="center">.........</td><td class="center">.........</td><td>Call a procedure</td></tr>
+<tr><td>CALL memptr32 </td><td class="center">.........</td><td class="center">.........</td><td>Call a procedure</td></tr>
+<tr><td>CBW  </td><td class="center">.........</td><td class="center">.........</td><td>Convert byte to word</td></tr>
+<tr><td>CLC  </td><td class="center">........c</td><td class="center">.........</td><td>Clear carry flag</td></tr>
+<tr><td>CLD  </td><td class="center">.d.......</td><td class="center">.........</td><td>Clear direction flag</td></tr>
+<tr><td>CLI  </td><td class="center">..i......</td><td class="center">.........</td><td>Clear interrupt flag</td></tr>
+<tr><td>CMC  </td><td class="center">........c</td><td class="center">.........</td><td>Complement carry flag</td></tr>
+<tr><td>CMP reg8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Compare destination to source</td></tr>
+<tr><td>CMP reg8/16 mem8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Compare destination to source</td></tr>
+<tr><td>CMP mem8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Compare destination to source</td></tr>
+<tr><td>CMP reg8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Compare destination to source</td></tr>
+<tr><td>CMP mem8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Compare destination to source</td></tr>
+<tr><td>CMP acc imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Compare destination to source</td></tr>
+<tr><td>CMPS dest-string source-string</td><td class="center">o...sz.pc</td><td class="center">.........</td><td>Compare string</td></tr>
+<tr><td>CWD  </td><td class="center">.........</td><td class="center">.........</td><td>Convert word to doubleword</td></tr>
+<tr><td>DAA  </td><td class="center">o...szapc</td><td class="center">.........</td><td>Decimal adjust for division</td></tr>
+<tr><td>DAS  </td><td class="center">....szapc</td><td class="center">o........</td><td>Decimal adjust for subtraction</td></tr>
+<tr><td>DEC reg16 </td><td class="center">o...szap.</td><td class="center">.........</td><td>Decrement by 1</td></tr>
+<tr><td>DEC reg8 </td><td class="center">o...szap.</td><td class="center">.........</td><td>Decrement by 1</td></tr>
+<tr><td>DEC mem8 </td><td class="center">o...szap.</td><td class="center">.........</td><td>Decrement by 1</td></tr>
+<tr><td>DEC mem16 </td><td class="center">o...szap.</td><td class="center">.........</td><td>Decrement by 1</td></tr>
+<tr><td>DIV  reg8</td><td class="center">.........</td><td class="center">o...szapc</td><td>Unsigned integer division</td></tr>
+<tr><td>DIV  reg16</td><td class="center">.........</td><td class="center">o...szapc</td><td>Unsigned integer division</td></tr>
+<tr><td>DIV  mem8</td><td class="center">.........</td><td class="center">o...szapc</td><td>Unsigned integer division</td></tr>
+<tr><td>DIV  mem16</td><td class="center">.........</td><td class="center">o...szapc</td><td>Unsigned integer division</td></tr>
+<tr><td>ESC imm8/16 mem8/16</td><td class="center">.........</td><td class="center">.........</td><td>External opcode escape</td></tr>
+<tr><td>ESC imm8/16 reg8/16</td><td class="center">.........</td><td class="center">.........</td><td>External opcode escape</td></tr>
+<tr><td>HLT  </td><td class="center">.........</td><td class="center">.........</td><td>Halt</td></tr>
+<tr><td>IDIV  reg8</td><td class="center">.........</td><td class="center">o...szapc</td><td>Signed integer division</td></tr>
+<tr><td>IDIV  reg16</td><td class="center">.........</td><td class="center">o...szapc</td><td>Signed integer division</td></tr>
+<tr><td>IDIV  mem8</td><td class="center">.........</td><td class="center">o...szapc</td><td>Signed integer division</td></tr>
+<tr><td>IDIV  mem16</td><td class="center">.........</td><td class="center">o...szapc</td><td>Signed integer division</td></tr>
+<tr><td>IMUL  reg8</td><td class="center">o.......c</td><td class="center">....szap.</td><td>Signed integer multiplication</td></tr>
+<tr><td>IMUL  reg16</td><td class="center">o.......c</td><td class="center">....szap.</td><td>Signed integer multiplication</td></tr>
+<tr><td>IMUL  mem8</td><td class="center">o.......c</td><td class="center">....szap.</td><td>Signed integer multiplication</td></tr>
+<tr><td>IMUL  mem16</td><td class="center">o.......c</td><td class="center">....szap.</td><td>Signed integer multiplication</td></tr>
+<tr><td>IN acc imm8</td><td class="center">.........</td><td class="center">.........</td><td>Input byte or word</td></tr>
+<tr><td>IN acc dx</td><td class="center">.........</td><td class="center">.........</td><td>Input byte or word</td></tr>
+<tr><td>INC reg16 </td><td class="center">o...szap.</td><td class="center">.........</td><td>Increment by 1</td></tr>
+<tr><td>INC reg8 </td><td class="center">o...szap.</td><td class="center">.........</td><td>Increment by 1</td></tr>
+<tr><td>INC mem8 </td><td class="center">o...szap.</td><td class="center">.........</td><td>Increment by 1</td></tr>
+<tr><td>INC mem16 </td><td class="center">o...szap.</td><td class="center">.........</td><td>Increment by 1</td></tr>
+<tr><td>INT  imm8</td><td class="center">..it.....</td><td class="center">.........</td><td>Interrupt</td></tr>
+<tr><td>INTR  </td><td class="center">..it.....</td><td class="center">.........</td><td>Interrupt if INTR and IF=1</td></tr>
+<tr><td>INTO  </td><td class="center">..it.....</td><td class="center">.........</td><td>Interrupt if overflow</td></tr>
+<tr><td>IRET  </td><td class="center">oditszapc</td><td class="center">.........</td><td>Return from interrupt</td></tr>
+<tr><td>JA  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if above</td></tr>
+<tr><td>JNBE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not below nor equal</td></tr>
+<tr><td>JAE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump above or equal</td></tr>
+<tr><td>JNB  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not below</td></tr>
+<tr><td>JB  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if below</td></tr>
+<tr><td>JNAE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not above nor equal</td></tr>
+<tr><td>JBE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if below</td></tr>
+<tr><td>JNA  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not above</td></tr>
+<tr><td>JC  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if carry</td></tr>
+<tr><td>JCXZ  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if CX is zero</td></tr>
+<tr><td>JE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if equal</td></tr>
+<tr><td>JZ  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if zero</td></tr>
+<tr><td>JG  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if greater</td></tr>
+<tr><td>JNLE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not less nor equal</td></tr>
+<tr><td>JGE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if greater or equal</td></tr>
+<tr><td>JNL  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not less</td></tr>
+<tr><td>JL  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if less</td></tr>
+<tr><td>JNGE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not greater nor equal</td></tr>
+<tr><td>JLE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if less or equal</td></tr>
+<tr><td>JNG  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not greater</td></tr>
+<tr><td>JMP  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump</td></tr>
+<tr><td>JMP  near-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump</td></tr>
+<tr><td>JMP  far-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump</td></tr>
+<tr><td>JMP  memptreg16</td><td class="center">.........</td><td class="center">.........</td><td>Jump</td></tr>
+<tr><td>JMP  regptreg16</td><td class="center">.........</td><td class="center">.........</td><td>Jump</td></tr>
+<tr><td>JMP  memptr32</td><td class="center">.........</td><td class="center">.........</td><td>Jump</td></tr>
+<tr><td>JNC  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not carry</td></tr>
+<tr><td>JNE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not equal</td></tr>
+<tr><td>JNZ  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not zero</td></tr>
+<tr><td>JNO  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not overflow</td></tr>
+<tr><td>JNP  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not parity</td></tr>
+<tr><td>JPO  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if parity odd</td></tr>
+<tr><td>JNS  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not sign</td></tr>
+<tr><td>JO  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if overflow</td></tr>
+<tr><td>JP  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if parity</td></tr>
+<tr><td>JPE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if parity even</td></tr>
+<tr><td>JS  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Jump if not sign</td></tr>
+<tr><td>LAHF  </td><td class="center">.........</td><td class="center">.........</td><td>Load AH from flags</td></tr>
+<tr><td>LDS reg16 mem32</td><td class="center">.........</td><td class="center">.........</td><td>Load pointer using DS</td></tr>
+<tr><td>LEA reg16 mem16</td><td class="center">.........</td><td class="center">.........</td><td>Load effective address</td></tr>
+<tr><td>LES reg16 mem32</td><td class="center">.........</td><td class="center">.........</td><td>Load pointer using ES</td></tr>
+<tr><td>LOCK  </td><td class="center">.........</td><td class="center">.........</td><td>Assert bus lock signal</td></tr>
+<tr><td>LODS  source-string</td><td class="center">.........</td><td class="center">.........</td><td>Load string</td></tr>
+<tr><td>LOOP  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Loop</td></tr>
+<tr><td>LOOPE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Loop if equal</td></tr>
+<tr><td>LOOPZ  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Loop if zero</td></tr>
+<tr><td>LOOPNE  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Loop if not equal</td></tr>
+<tr><td>LOOPNZ  short-label</td><td class="center">.........</td><td class="center">.........</td><td>Loop if not zero</td></tr>
+<tr><td>NMI  </td><td class="center">..it.....</td><td class="center">.........</td><td>Interrupt if NMI = 1</td></tr>
+<tr><td>MOV mem8/16 acc</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV acc mem8/16</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV reg8/16 reg8/16</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV reg8/16 mem8/16</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV mem8/16 reg8/16</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV reg8/16 imm8/16</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV mem8/16 imm8/16</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV seg-reg reg16</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV seg-reg mem16</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV reg16 seg-reg</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOV mem16 seg-reg</td><td class="center">.........</td><td class="center">.........</td><td>Move</td></tr>
+<tr><td>MOVS dst-string src-string</td><td class="center">.........</td><td class="center">.........</td><td>Move string</td></tr>
+<tr><td>MOVSB  </td><td class="center">.........</td><td class="center">.........</td><td>Move string byte</td></tr>
+<tr><td>MOVSW  </td><td class="center">.........</td><td class="center">.........</td><td>Move string word</td></tr>
+<tr><td>MUL  reg8/16</td><td class="center">o.......c</td><td class="center">....szap.</td><td>Unsigned integer multiplication</td></tr>
+<tr><td>MUL  mem8/16</td><td class="center">o.......c</td><td class="center">....szap.</td><td>Unsigned integer multiplication</td></tr>
+<tr><td>NEG reg8/16 </td><td class="center">o...szapc</td><td class="center">.........</td><td>Negate</td></tr>
+<tr><td>NEG mem8/16 </td><td class="center">o...szapc</td><td class="center">.........</td><td>Negate</td></tr>
+<tr><td>NOP  </td><td class="center">.........</td><td class="center">.........</td><td>No-operation</td></tr>
+<tr><td>NOT reg8/16 </td><td class="center">.........</td><td class="center">.........</td><td>Logical not</td></tr>
+<tr><td>NOT mem8/16 </td><td class="center">.........</td><td class="center">.........</td><td>Logical not</td></tr>
+<tr><td>OR reg8/16 reg8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical inclusive or</td></tr>
+<tr><td>OR reg8/16 mem8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical inclusive or</td></tr>
+<tr><td>OR mem8/16 reg8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical inclusive or</td></tr>
+<tr><td>OR acc imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical inclusive or</td></tr>
+<tr><td>OR reg8/16 imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical inclusive or</td></tr>
+<tr><td>OR mem8/16 imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical inclusive or</td></tr>
+<tr><td>OUT imm8 acc</td><td class="center">.........</td><td class="center">.........</td><td>Output byte or word</td></tr>
+<tr><td>OUT dx acc</td><td class="center">.........</td><td class="center">.........</td><td>Output byte or word</td></tr>
+<tr><td>POP reg16 </td><td class="center">.........</td><td class="center">.........</td><td>Pop word off stack</td></tr>
+<tr><td>POP seg-reg </td><td class="center">.........</td><td class="center">.........</td><td>Pop word off stack</td></tr>
+<tr><td>POP mem16 </td><td class="center">.........</td><td class="center">.........</td><td>Pop word off stack</td></tr>
+<tr><td>POPF  </td><td class="center">.........</td><td class="center">.........</td><td>Pop flags off stack</td></tr>
+<tr><td>PUSH  reg16</td><td class="center">.........</td><td class="center">.........</td><td>Push word onto stack</td></tr>
+<tr><td>PUSH  seg-reg</td><td class="center">.........</td><td class="center">.........</td><td>Push word onto stack</td></tr>
+<tr><td>PUSH  mem16</td><td class="center">.........</td><td class="center">.........</td><td>Push word onto stack</td></tr>
+<tr><td>PUSHF  </td><td class="center">.........</td><td class="center">.........</td><td>Push flags onto stack</td></tr>
+<tr><td>RCL reg8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate left through carry</td></tr>
+<tr><td>RCL reg8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate left through carry</td></tr>
+<tr><td>RCL mem8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate left through carry</td></tr>
+<tr><td>RCL mem8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate left through carry</td></tr>
+<tr><td>RCR reg8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate right through carry</td></tr>
+<tr><td>RCR reg8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate right through carry</td></tr>
+<tr><td>RCR mem8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate right through carry</td></tr>
+<tr><td>RCR mem8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate right through carry</td></tr>
+<tr><td>REP  </td><td class="center">.........</td><td class="center">.........</td><td>Repeat string operation</td></tr>
+<tr><td>REPE  </td><td class="center">.........</td><td class="center">.........</td><td>Repeat string operation while equal</td></tr>
+<tr><td>REPZ  </td><td class="center">.........</td><td class="center">.........</td><td>Repeat string operation while zero</td></tr>
+<tr><td>REPNE  </td><td class="center">.........</td><td class="center">.........</td><td>Repeat string operation while not equal</td></tr>
+<tr><td>REPNZ  </td><td class="center">.........</td><td class="center">.........</td><td>Repeat string operation while not zero</td></tr>
+<tr><td>RET  imm8</td><td class="center">.........</td><td class="center">.........</td><td>Return from procedure</td></tr>
+<tr><td>RET  </td><td class="center">.........</td><td class="center">.........</td><td>Return from procedure</td></tr>
+<tr><td>ROL reg8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate left</td></tr>
+<tr><td>ROL reg8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate left</td></tr>
+<tr><td>ROL mem8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate left</td></tr>
+<tr><td>ROL mem8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate left</td></tr>
+<tr><td>ROR reg8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate right</td></tr>
+<tr><td>ROR reg8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate right</td></tr>
+<tr><td>ROR mem8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate right</td></tr>
+<tr><td>ROR mem8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Rotate right</td></tr>
+<tr><td>SAHF  </td><td class="center">.........</td><td class="center">.........</td><td>Store AH into flags</td></tr>
+<tr><td>SAL reg8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic left</td></tr>
+<tr><td>SAL reg8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic left</td></tr>
+<tr><td>SAL mem8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic left</td></tr>
+<tr><td>SAL mem8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic left</td></tr>
+<tr><td>SHL reg8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic left</td></tr>
+<tr><td>SHL reg8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic left</td></tr>
+<tr><td>SHL mem8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic left</td></tr>
+<tr><td>SHL mem8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic left</td></tr>
+<tr><td>SAR reg8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic right</td></tr>
+<tr><td>SAR reg8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic right</td></tr>
+<tr><td>SAR mem8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic right</td></tr>
+<tr><td>SAR mem8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift arithmetic right</td></tr>
+<tr><td>SBB reg8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtract with borrow</td></tr>
+<tr><td>SBB reg8/16 mem8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtract with borrow</td></tr>
+<tr><td>SBB mem8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtract with borrow</td></tr>
+<tr><td>SBB acc imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtract with borrow</td></tr>
+<tr><td>SBB reg8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtract with borrow</td></tr>
+<tr><td>SBB mem8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtract with borrow</td></tr>
+<tr><td>SCAS dest-string </td><td class="center">o...szapc</td><td class="center">.........</td><td>Scan string</td></tr>
+<tr><td>SEGMENT  </td><td class="center">.........</td><td class="center">.........</td><td>Segment prefix override</td></tr>
+<tr><td>SHR reg8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift logical right</td></tr>
+<tr><td>SHR reg8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift logical right</td></tr>
+<tr><td>SHR mem8/16 1</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift logical right</td></tr>
+<tr><td>SHR mem8/16 CL</td><td class="center">o.......c</td><td class="center">.........</td><td>Shift logical right</td></tr>
+<tr><td>SINGLE STEP  </td><td class="center">..it.....</td><td class="center">.........</td><td>Interrupt if TF = 1</td></tr>
+<tr><td>STC  </td><td class="center">........c</td><td class="center">.........</td><td>Set carry flag</td></tr>
+<tr><td>STD  </td><td class="center">.d.......</td><td class="center">.........</td><td>Set direction flag</td></tr>
+<tr><td>STI  </td><td class="center">..i......</td><td class="center">.........</td><td>Set interrupt enable flag</td></tr>
+<tr><td>STOS dest-string </td><td class="center">.........</td><td class="center">.........</td><td>Store byte or word string</td></tr>
+<tr><td>SUB reg8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtraction</td></tr>
+<tr><td>SUB reg8/16 mem8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtraction</td></tr>
+<tr><td>SUB mem8/16 reg8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtraction</td></tr>
+<tr><td>SUB reg8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtraction</td></tr>
+<tr><td>SUB mem8/16 imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtraction</td></tr>
+<tr><td>SUB acc imm8/16</td><td class="center">o...szapc</td><td class="center">.........</td><td>Subtraction</td></tr>
+<tr><td>TEST reg8/16 reg8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Test or non-destructive logical and</td></tr>
+<tr><td>TEST reg8/16 mem8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Test or non-destructive logical and</td></tr>
+<tr><td>TEST reg8/16 imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Test or non-destructive logical and</td></tr>
+<tr><td>TEST mem8/16 imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Test or non-destructive logical and</td></tr>
+<tr><td>TEST acc imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Test or non-destructive logical and</td></tr>
+<tr><td>WAIT  </td><td class="center">.........</td><td class="center">.........</td><td>Wait while TEST pin not asserted</td></tr>
+<tr><td>XCHG acc reg16</td><td class="center">.........</td><td class="center">.........</td><td>Exchange operands</td></tr>
+<tr><td>XCHG mem8/16 reg8/16</td><td class="center">.........</td><td class="center">.........</td><td>Exchange operands</td></tr>
+<tr><td>XCHG reg8/16 reg8/16</td><td class="center">.........</td><td class="center">.........</td><td>Exchange operands</td></tr>
+<tr><td>XLAT  source-table</td><td class="center">.........</td><td class="center">.........</td><td>Translate</td></tr>
+<tr><td>XOR reg8/16 reg8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical exclusive or</td></tr>
+<tr><td>XOR reg8/16 mem8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical exclusive or</td></tr>
+<tr><td>XOR mem8/16 reg8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical exclusive or</td></tr>
+<tr><td>XOR reg8/16 imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical exclusive or</td></tr>
+<tr><td>XOR mem8/16 imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical exclusive or</td></tr>
+<tr><td>XOR acc imm8/16</td><td class="center">o...sz.pc</td><td class="center">......a..</td><td>Logical exclusive or</td></tr>
+</table>
+	</body>
+</html>
