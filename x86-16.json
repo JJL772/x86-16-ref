@@ -1,0 +1,1529 @@
+[
+	{
+		"mnem": "aaa",
+		"desc": {
+			"brief": "ASCII adjust AL after addition",
+			"detail": "Changes contents of AL to valid unpacked decimal number"
+		},
+		"forms": [
+			{
+				"dst": "", "src": ""
+			}
+		],
+		"mflags": "ac",
+		"uflags": "oszp"
+	},
+	{
+		"mnem": "aaa",
+		"desc": {
+			"brief": "ASCII adjust for division",
+			"detail": ""
+		},
+		"forms": [
+			{
+				"dst": "", "src": ""
+			}
+		],
+		"mflags": "szp",
+		"uflags": "oac"
+	},
+	{
+		"mnem": "aam",
+		"desc": {
+			"brief": "ASCII adjust for multiply",
+			"detail": ""
+		},
+		"forms": [
+			{
+				"dst": "", "src": ""
+			}
+		],
+		"mflags": "szp",
+		"uflags": "oac"
+	},
+	{
+		"mnem": "aas",
+		"desc": {
+			"brief": "ASCII adjust for multiply",
+			"detail": ""
+		},
+		"forms": [
+			{
+				"dst": "", "src": ""
+			}
+		],
+		"mflags": "ac",
+		"uflags": "oszp"
+	},
+	{
+		"mnem": "adc",
+		"desc": {
+			"brief": "Add with carry",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" },
+			{ "dst": "acc", "src": "imm8/16" }
+		],
+		"mflags": "oszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "add",
+		"desc": {
+			"brief": "Add",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" },
+			{ "dst": "acc", "src": "imm8/16" }
+		],
+		"mflags": "oszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "and",
+		"desc": {
+			"brief": "Logical AND",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" },
+			{ "dst": "acc", "src": "imm8/16" }
+		],
+		"mflags": "oszpc",
+		"uflags": "a"
+	},
+	{
+		"mnem": "call",
+		"desc": {
+			"brief": "Call a procedure",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "near-proc", "src": "" },
+			{ "dst": "far-proc", "src": "" },
+			{ "dst": "memptreg16", "src": "" },
+			{ "dst": "regptreg16", "src": "" },
+			{ "dst": "memptr32", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "cbw",
+		"desc": {
+			"brief": "Convert byte to word",
+			"detail": "Extends the sign of byte in AL throughout the register AH"
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "clc",
+		"desc": {
+			"brief": "Clear carry flag",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "c",
+		"uflags": ""
+	},
+	{
+		"mnem": "cld",
+		"desc": {
+			"brief": "Clear direction flag",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "d",
+		"uflags": ""
+	},
+	{
+		"mnem": "cli",
+		"desc": {
+			"brief": "Clear interrupt flag",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "i",
+		"uflags": ""
+	},
+	{
+		"mnem": "cmc",
+		"desc": {
+			"brief": "Complement carry flag",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "c",
+		"uflags": ""
+	},
+	{
+		"mnem": "cmp",
+		"desc": {
+			"brief": "Compare destination to source",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" },
+			{ "dst": "acc", "src": "imm8/16" }
+		],
+		"mflags": "oszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "cmps",
+		"desc": {
+			"brief": "Compare string",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "dest-string", "src": "source-string" }
+		],
+		"mflags": "oszpc",
+		"uflags": ""
+	},
+	{
+		"mnem": "cwd",
+		"desc": {
+			"brief": "Convert word to doubleword",
+			"detail": "Extends the sign of word in AX into DX"
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "daa",
+		"desc": {
+			"brief": "Decimal adjust for division",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "oszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "das",
+		"desc": {
+			"brief": "Decimal adjust for subtraction",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "szapc",
+		"uflags": "o"
+	},
+	{
+		"mnem": "dec",
+		"desc": {
+			"brief": "Decrement by 1",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg16", "src": "" },
+			{ "dst": "reg8", "src": "" },
+			{ "dst": "mem8", "src": "" },
+			{ "dst": "mem16", "src": "" }
+		],
+		"mflags": "oszap",
+		"uflags": ""
+	},
+	{
+		"mnem": "div",
+		"desc": {
+			"brief": "Unsigned integer division",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "reg8" },
+			{ "dst": "", "src": "reg16" },
+			{ "dst": "", "src": "mem8" },
+			{ "dst": "", "src": "mem16" }
+		],
+		"mflags": "",
+		"uflags": "oszapc"
+	},
+	{
+		"mnem": "esc",
+		"desc": {
+			"brief": "External opcode escape",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "imm8/16", "src": "mem8/16" },
+			{ "dst": "imm8/16", "src": "reg8/16" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "hlt",
+		"desc": {
+			"brief": "Halt",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "idiv",
+		"desc": {
+			"brief": "Signed integer division",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "reg8" },
+			{ "dst": "", "src": "reg16" },
+			{ "dst": "", "src": "mem8" },
+			{ "dst": "", "src": "mem16" }
+		],
+		"mflags": "",
+		"uflags": "oszapc"
+	},
+	{
+		"mnem": "imul",
+		"desc": {
+			"brief": "Signed integer multiplication",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "reg8" },
+			{ "dst": "", "src": "reg16" },
+			{ "dst": "", "src": "mem8" },
+			{ "dst": "", "src": "mem16" }
+		],
+		"mflags": "oc",
+		"uflags": "szap"
+	},
+	{
+		"mnem": "in",
+		"desc": {
+			"brief": "Input byte or word",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "acc", "src": "imm8" },
+			{ "dst": "acc", "src": "dx" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "inc",
+		"desc": {
+			"brief": "Increment by 1",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg16", "src": "" },
+			{ "dst": "reg8", "src": "" },
+			{ "dst": "mem8", "src": "" },
+			{ "dst": "mem16", "src": "" }
+		],
+		"mflags": "oszap",
+		"uflags": ""
+	},
+	{
+		"mnem": "int",
+		"desc": {
+			"brief": "Interrupt",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "imm8" }
+		],
+		"mflags": "it",
+		"uflags": ""
+	},
+	{
+		"mnem": "intr",
+		"desc": {
+			"brief": "Interrupt if INTR and IF=1",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "it",
+		"uflags": ""
+	},
+	{
+		"mnem": "into",
+		"desc": {
+			"brief": "Interrupt if overflow",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "it",
+		"uflags": ""
+	},
+	{
+		"mnem": "iret",
+		"desc": {
+			"brief": "Return from interrupt",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "oditszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "ja",
+		"desc": {
+			"brief": "Jump if above",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnbe",
+		"desc": {
+			"brief": "Jump if not below nor equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jae",
+		"desc": {
+			"brief": "Jump above or equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnb",
+		"desc": {
+			"brief": "Jump if not below",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jb",
+		"desc": {
+			"brief": "Jump if below",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnae",
+		"desc": {
+			"brief": "Jump if not above nor equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jbe",
+		"desc": {
+			"brief": "Jump if below",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jna",
+		"desc": {
+			"brief": "Jump if not above",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jc",
+		"desc": {
+			"brief": "Jump if carry",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jcxz",
+		"desc": {
+			"brief": "Jump if CX is zero",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "je",
+		"desc": {
+			"brief": "Jump if equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jz",
+		"desc": {
+			"brief": "Jump if zero",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jg",
+		"desc": {
+			"brief": "Jump if greater",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnle",
+		"desc": {
+			"brief": "Jump if not less nor equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jge",
+		"desc": {
+			"brief": "Jump if greater or equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnl",
+		"desc": {
+			"brief": "Jump if not less",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jl",
+		"desc": {
+			"brief": "Jump if less",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnge",
+		"desc": {
+			"brief": "Jump if not greater nor equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jle",
+		"desc": {
+			"brief": "Jump if less or equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jng",
+		"desc": {
+			"brief": "Jump if not greater",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jmp",
+		"desc": {
+			"brief": "Jump",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" },
+			{ "dst": "", "src": "near-label" },
+			{ "dst": "", "src": "far-label" },
+			{ "dst": "", "src": "memptreg16" },
+			{ "dst": "", "src": "regptreg16" },
+			{ "dst": "", "src": "memptr32" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnc",
+		"desc": {
+			"brief": "Jump if not carry",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jne",
+		"desc": {
+			"brief": "Jump if not equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnz",
+		"desc": {
+			"brief": "Jump if not zero",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jno",
+		"desc": {
+			"brief": "Jump if not overflow",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jnp",
+		"desc": {
+			"brief": "Jump if not parity",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jpo",
+		"desc": {
+			"brief": "Jump if parity odd",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jns",
+		"desc": {
+			"brief": "Jump if not sign",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jo",
+		"desc": {
+			"brief": "Jump if overflow",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jp",
+		"desc": {
+			"brief": "Jump if parity",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "jpe",
+		"desc": {
+			"brief": "Jump if parity even",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "js",
+		"desc": {
+			"brief": "Jump if not sign",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "lahf",
+		"desc": {
+			"brief": "Load AH from flags",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "lds",
+		"desc": {
+			"brief": "Load pointer using DS",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg16", "src": "mem32" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "lea",
+		"desc": {
+			"brief": "Load effective address",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg16", "src": "mem16" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "les",
+		"desc": {
+			"brief": "Load pointer using ES",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg16", "src": "mem32" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "lock",
+		"desc": {
+			"brief": "Assert bus lock signal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "lods",
+		"desc": {
+			"brief": "Load string",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "source-string" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "loop",
+		"desc": {
+			"brief": "Loop",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "loope",
+		"desc": {
+			"brief": "Loop if equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "loopz",
+		"desc": {
+			"brief": "Loop if zero",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "loopne",
+		"desc": {
+			"brief": "Loop if not equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "loopnz",
+		"desc": {
+			"brief": "Loop if not zero",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "short-label" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "nmi",
+		"desc": {
+			"brief": "Interrupt if NMI = 1",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "it",
+		"uflags": ""
+	},
+	{
+		"mnem": "mov",
+		"desc": {
+			"brief": "Move",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "mem8/16", "src": "acc" },
+			{ "dst": "acc", "src": "mem8/16" },
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" },
+			{ "dst": "seg-reg", "src": "reg16" },
+			{ "dst": "seg-reg", "src": "mem16" },
+			{ "dst": "reg16", "src": "seg-reg" },
+			{ "dst": "mem16", "src": "seg-reg" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "movs",
+		"desc": {
+			"brief": "Move string",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "dst-string", "src": "src-string" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "movsb",
+		"desc": {
+			"brief": "Move string byte",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "movsw",
+		"desc": {
+			"brief": "Move string word",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "mul",
+		"desc": {
+			"brief": "Unsigned integer multiplication",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "reg8/16" },
+			{ "dst": "", "src": "mem8/16" }
+		],
+		"mflags": "oc",
+		"uflags": "szap"
+	},
+	{
+		"mnem": "neg",
+		"desc": {
+			"brief": "Negate",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "" },
+			{ "dst": "mem8/16", "src": "" }
+		],
+		"mflags": "oszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "nop",
+		"desc": {
+			"brief": "No-operation",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "not",
+		"desc": {
+			"brief": "Logical not",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "" },
+			{ "dst": "mem8/16", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "or",
+		"desc": {
+			"brief": "Logical inclusive or",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "acc", "src": "imm8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" }
+		],
+		"mflags": "oszpc",
+		"uflags": "a"
+	},
+	{
+		"mnem": "out",
+		"desc": {
+			"brief": "Output byte or word",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "imm8", "src": "acc" },
+			{ "dst": "dx", "src": "acc" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "pop",
+		"desc": {
+			"brief": "Pop word off stack",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg16", "src": "" },
+			{ "dst": "seg-reg", "src": "" },
+			{ "dst": "mem16", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "popf",
+		"desc": {
+			"brief": "Pop flags off stack",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "push",
+		"desc": {
+			"brief": "Push word onto stack",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "reg16" },
+			{ "dst": "", "src": "seg-reg" },
+			{ "dst": "", "src": "mem16" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "pushf",
+		"desc": {
+			"brief": "Push flags onto stack",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "rcl",
+		"desc": {
+			"brief": "Rotate left through carry",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "1" },
+			{ "dst": "reg8/16", "src": "CL" },
+			{ "dst": "mem8/16", "src": "1" },
+			{ "dst": "mem8/16", "src": "CL" }
+		],
+		"mflags": "oc",
+		"uflags": ""
+	},
+	{
+		"mnem": "rcr",
+		"desc": {
+			"brief": "Rotate right through carry",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "1" },
+			{ "dst": "reg8/16", "src": "CL" },
+			{ "dst": "mem8/16", "src": "1" },
+			{ "dst": "mem8/16", "src": "CL" }
+		],
+		"mflags": "oc",
+		"uflags": ""
+	},
+	{
+		"mnem": "rep",
+		"desc": {
+			"brief": "Repeat string operation",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "repe",
+		"desc": {
+			"brief": "Repeat string operation while equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "repz",
+		"desc": {
+			"brief": "Repeat string operation while zero",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "repne",
+		"desc": {
+			"brief": "Repeat string operation while not equal",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "repnz",
+		"desc": {
+			"brief": "Repeat string operation while not zero",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "ret",
+		"desc": {
+			"brief": "Return from procedure",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "imm8" },
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "rol",
+		"desc": {
+			"brief": "Rotate left",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "1" },
+			{ "dst": "reg8/16", "src": "CL" },
+			{ "dst": "mem8/16", "src": "1" },
+			{ "dst": "mem8/16", "src": "CL" }
+		],
+		"mflags": "oc",
+		"uflags": ""
+	},
+	{
+		"mnem": "ror",
+		"desc": {
+			"brief": "Rotate right",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "1" },
+			{ "dst": "reg8/16", "src": "CL" },
+			{ "dst": "mem8/16", "src": "1" },
+			{ "dst": "mem8/16", "src": "CL" }
+		],
+		"mflags": "oc",
+		"uflags": ""
+	},
+	{
+		"mnem": "sahf",
+		"desc": {
+			"brief": "Store AH into flags",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "sal",
+		"desc": {
+			"brief": "Shift arithmetic left",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "1" },
+			{ "dst": "reg8/16", "src": "CL" },
+			{ "dst": "mem8/16", "src": "1" },
+			{ "dst": "mem8/16", "src": "CL" }
+		],
+		"mflags": "oc",
+		"uflags": ""
+	},
+	{
+		"mnem": "shl",
+		"desc": {
+			"brief": "Shift arithmetic left",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "1" },
+			{ "dst": "reg8/16", "src": "CL" },
+			{ "dst": "mem8/16", "src": "1" },
+			{ "dst": "mem8/16", "src": "CL" }
+		],
+		"mflags": "oc",
+		"uflags": ""
+	},
+	{
+		"mnem": "sar",
+		"desc": {
+			"brief": "Shift arithmetic right",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "1" },
+			{ "dst": "reg8/16", "src": "CL" },
+			{ "dst": "mem8/16", "src": "1" },
+			{ "dst": "mem8/16", "src": "CL" }
+		],
+		"mflags": "oc",
+		"uflags": ""
+	},
+	{
+		"mnem": "sbb",
+		"desc": {
+			"brief": "Subtract with borrow",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "acc", "src": "imm8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" }
+		],
+		"mflags": "oszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "scas",
+		"desc": {
+			"brief": "Scan string",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "dest-string", "src": "" }
+		],
+		"mflags": "oszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "segment",
+		"desc": {
+			"brief": "Segment prefix override",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "shr",
+		"desc": {
+			"brief": "Shift logical right",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "1" },
+			{ "dst": "reg8/16", "src": "CL" },
+			{ "dst": "mem8/16", "src": "1" },
+			{ "dst": "mem8/16", "src": "CL" }
+		],
+		"mflags": "oc",
+		"uflags": ""
+	},
+	{
+		"mnem": "single step",
+		"desc": {
+			"brief": "Interrupt if TF = 1",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "it",
+		"uflags": ""
+	},
+	{
+		"mnem": "stc",
+		"desc": {
+			"brief": "Set carry flag",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "c",
+		"uflags": ""
+	},
+	{
+		"mnem": "std",
+		"desc": {
+			"brief": "Set direction flag",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "d",
+		"uflags": ""
+	},
+	{
+		"mnem": "sti",
+		"desc": {
+			"brief": "Set interrupt enable flag",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "i",
+		"uflags": ""
+	},
+	{
+		"mnem": "stos",
+		"desc": {
+			"brief": "Store byte or word string",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "dest-string", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "sub",
+		"desc": {
+			"brief": "Subtraction",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" },
+			{ "dst": "acc", "src": "imm8/16" }
+		],
+		"mflags": "oszapc",
+		"uflags": ""
+	},
+	{
+		"mnem": "test",
+		"desc": {
+			"brief": "Test or non-destructive logical and",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" },
+			{ "dst": "acc", "src": "imm8/16" }
+		],
+		"mflags": "oszpc",
+		"uflags": "a"
+	},
+	{
+		"mnem": "wait",
+		"desc": {
+			"brief": "Wait while TEST pin not asserted",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "xchg",
+		"desc": {
+			"brief": "Exchange operands",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "acc", "src": "reg16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "reg8/16" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "xlat",
+		"desc": {
+			"brief": "Translate",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "", "src": "source-table" }
+		],
+		"mflags": "",
+		"uflags": ""
+	},
+	{
+		"mnem": "xor",
+		"desc": {
+			"brief": "Logical exclusive or",
+			"detail": ""
+		},
+		"forms": [
+			{ "dst": "reg8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "mem8/16" },
+			{ "dst": "mem8/16", "src": "reg8/16" },
+			{ "dst": "reg8/16", "src": "imm8/16" },
+			{ "dst": "mem8/16", "src": "imm8/16" },
+			{ "dst": "acc", "src": "imm8/16" }
+		],
+		"mflags": "oszpc",
+		"uflags": "a"
+	}
+]
